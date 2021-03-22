@@ -1,0 +1,207 @@
+@import '../../../variables.scss';
+
+$viz-prefix: viz-;
+
+$checkbox-prefix-cls: #{$viz-prefix}checkbox;
+
+.#{$checkbox-prefix-cls} {
+  position: relative;
+  top: -0.09em;
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: none;
+  cursor: pointer;
+
+  .#{$checkbox-prefix-cls}-wrapper:hover &-inner,
+  &:hover &-inner,
+  &-input:focus + &-inner {
+    border-color: $primary;
+    border-radius: 4px;
+  }
+
+  &-checked::after {
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid $primary;
+    border-radius: 2px;
+    visibility: hidden;
+    animation: vizCheckboxEffect 0.36s ease-in-out;
+    animation-fill-mode: backwards;
+    content: '';
+  }
+
+  &:hover::after,
+  .#{$checkbox-prefix-cls}-wrapper:hover &::after {
+    visibility: visible;
+    border-radius: 4px;
+  }
+
+  &-inner {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    direction: ltr;
+    background-color: $white;
+    border: 2px solid $sidebarLabel;
+    border-collapse: separate;
+    transition: all 0.3s;
+    border-radius: 4px;
+
+    &::after {
+      position: absolute;
+      top: 40%;
+      left: 20%;
+      display: table;
+      width: 7px;
+      height: 13px;
+      border: 2px solid rgb(158, 155, 155);
+      border-top: 0;
+      border-left: 0;
+      transform: rotate(45deg) scale(0) translate(-50%, -50%);
+      opacity: 0;
+      transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
+      content: ' ';
+    }
+  }
+
+  &-input {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 0;
+    touch-action: manipulation;
+    opacity: 0;
+  }
+}
+
+.#{$checkbox-prefix-cls}-checked .#{$checkbox-prefix-cls}-inner::after {
+  position: absolute;
+  box-sizing: border-box;
+  display: table;
+  border: 2px solid $white;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg) scale(1) translate(-50%, -50%);
+  opacity: 1;
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  content: ' ';
+}
+
+.#{$checkbox-prefix-cls}-checked {
+  .#{$checkbox-prefix-cls}-inner {
+    background-color: $primary;
+    border-color: $primary;
+    border-radius: 4px;
+  }
+}
+
+.#{$checkbox-prefix-cls}-disabled {
+  cursor: not-allowed;
+
+  &.#{$checkbox-prefix-cls}-checked {
+    .#{$checkbox-prefix-cls}-inner::after {
+      border-color: $line;
+      animation-name: none;
+    }
+  }
+
+  .#{$checkbox-prefix-cls}-input {
+    cursor: not-allowed;
+  }
+
+  .#{$checkbox-prefix-cls}-inner {
+    background-color: $sectionBG;
+    border-color: $line !important;
+
+    &::after {
+      border-color: $line;
+      border-collapse: separate;
+      animation-name: none;
+    }
+  }
+
+  & + span {
+    color: $line;
+    cursor: not-allowed;
+  }
+
+  &:hover::after,
+  .#{$checkbox-prefix-cls}-wrapper:hover &::after {
+    visibility: hidden;
+  }
+}
+
+.#{$checkbox-prefix-cls}-wrapper {
+  font-size: 1.6rem;
+  display: inline-block;
+  line-height: unset;
+  cursor: pointer;
+
+  //&.#{$checkbox-prefix-cls}-wrapper-disabled {
+  &__wrapper-disabled {
+    cursor: not-allowed;
+  }
+
+  & + & {
+    margin-left: 8px;
+  }
+}
+
+.#{$checkbox-prefix-cls} + span {
+  padding: 0 8px;
+}
+
+.#{$checkbox-prefix-cls}-group {
+  display: inline-block;
+
+  &-item {
+    display: inline-block;
+    margin-right: 8px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-item + &-item {
+    margin-left: 0;
+  }
+}
+
+.#{$checkbox-prefix-cls}-subtext {
+  color: $formInput;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.33;
+  padding-left: 29px;
+  margin-top: 4px;
+}
+
+@keyframes vizCheckboxEffect {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}

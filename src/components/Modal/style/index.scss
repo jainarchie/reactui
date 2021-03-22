@@ -1,0 +1,40 @@
+@import '../../../variables.scss';
+
+.viz-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.viz-modal-child {
+  min-width: 40vw;
+  min-height: 60vh;
+  overflow: auto;
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  overflow: visible;
+  border: 1px solid #eee;
+}
+
+.viz-modal-close {
+  position: absolute;
+  background-color: #eeeeee;
+  top: -20px;
+  right: -20px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 25px;
+  z-index: 11;
+  cursor: pointer;
+}

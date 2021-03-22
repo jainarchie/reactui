@@ -1,0 +1,158 @@
+@import '../../../variables.scss';
+
+$viz-prefix: viz-;
+
+$input-prefix-cls: #{$viz-prefix}input;
+
+.#{$input-prefix-cls} {
+  &__wrapper {
+    position: relative;
+
+    &--primary {
+      .#{$input-prefix-cls}__fieldwrapper {
+        border: 1px solid $primary;
+      }
+
+      .#{$input-prefix-cls}__control {
+        background-color: $secondary;
+        color: $primary;
+        &::placeholder {
+          color: $lightSecondary;
+        }
+      }
+
+      span {
+        color: $primary;
+      }
+
+      input:focus {
+        border-color: $primary;
+      }
+    }
+
+    &--secondary {
+      .#{$input-prefix-cls}__fieldwrapper {
+        border: 1px solid $secondary;
+      }
+
+      .#{$input-prefix-cls}__control {
+        background-color: $white;
+        color: $secondary;
+
+        &::placeholder {
+          color: $lightSecondary;
+        }
+      }
+
+      span {
+        color: $secondary;
+      }
+
+      input:focus {
+        border-color: $primary;
+      }
+    }
+
+    &--focused {
+      .#{$input-prefix-cls}__fieldwrapper {
+        border: 1px solid $blueLight;
+      }
+    }
+
+    &--disabled {
+      .#{$input-prefix-cls}__fieldwrapper {
+        background: $greyLight;
+        cursor: not-allowed;
+      }
+    }
+
+    &--has-error {
+      .#{$input-prefix-cls}__fieldwrapper {
+        border: 1px solid $red;
+      }
+
+      .#{$input-prefix-cls}__control {
+        &::placeholder {
+          color: $red;
+        }
+      }
+
+      .#{$input-prefix-cls}__label {
+        color: $red;
+      }
+
+      input:focus {
+        border-color: $red;
+      }
+    }
+  }
+
+  &__fieldwrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid $greyDark;
+    border-radius: 2px;
+    background: $white;
+  }
+
+  &__field {
+    flex: 1;
+    position: relative;
+  }
+
+  &__control {
+    border: 0;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+
+    &:focus,
+    &--has-value {
+      & ~ .#{$input-prefix-cls}__label {
+        transform: translateY(-100%);
+        font-weight: 400;
+        font-size: 1.2rem;
+      }
+    }
+
+    &:read-only {
+      color: rgba(24, 34, 51, 0.31);
+    }
+
+    &::placeholder {
+      opacity: 1;
+      font-size: 16px;
+      color: $blueGreyLight;
+      line-height: 1.33;
+    }
+
+    &:active,
+    &:focus {
+      border: 0;
+      outline: none;
+    }
+
+    &:disabled,
+    &:read-only {
+      border: 0;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      color: rgba(24, 34, 51, 0.31);
+      background: $greyLight;
+    }
+
+    // &:invalid {
+    //   border: 1px solid $red;
+    // }
+  }
+}
+
+.pr60 {
+  padding-right: 6rem;
+}

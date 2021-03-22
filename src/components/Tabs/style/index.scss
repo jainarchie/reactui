@@ -1,0 +1,96 @@
+@import '../../../variables.scss';
+
+.tabsWrapper {
+  .tabs {
+    display: flex;
+    margin: 0;
+    list-style-type: none;
+    padding: 0 15px;
+    border-bottom: solid 1px $greyDark;
+  }
+
+  &.tab-type--vertical {
+    display: flex;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      background-color: $greyDark;
+      left: 30rem;
+      top: 0;
+    }
+
+    .tabs {
+      flex-direction: column;
+      padding: 0;
+      border: none;
+      min-width: 30rem;
+    }
+
+    .tab-header {
+      text-align: left;
+      padding: 10px;
+      border-bottom: solid 0.1rem $greyDark;
+      margin: 0;
+      min-height: 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      font-weight: $regular;
+      color: $black;
+
+      &.active {
+        font-weight: $bold;
+
+        &::after {
+          height: 100%;
+          width: 0.4rem;
+        }
+      }
+    }
+
+    .tabs-content {
+      flex: 1;
+    }
+  }
+
+  .tab-header {
+    margin-right: 2.4rem;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: $semiBold;
+    color: $blueGrey;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+
+    .subTitle {
+      color: $blueGreyLight;
+      font-size: 12px;
+      font-weight: $regular;
+      line-height: 1.33;
+    }
+
+    .listContainer {
+      outline: 0;
+    }
+  }
+
+  .tab-header.active {
+    color: $primary;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 0.4rem;
+      background: $primary;
+    }
+  }
+}

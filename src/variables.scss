@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    font-family: 'Poppins',
+    sans-serif;
+}
+$viz-prefix: 'viz-';
+
+// Color Variables
+//$primary: #00b9f5;
+//$textColor3: #182233;
+
+//$lightGrey: #d8d8d8;
+
+// Brand
+//$secondary: #002e6e;
+// States
+//$positive: #00c673;
+$alert: #ff9e00;
+//$alertLight: #fffaf2;
+
+//$errorLight: #fff5f6;
+// Typography
+
+//$dark2: #536d90;
+
+//$darkgray: #536e92;
+//$slateBlue: #5e779a;
+
+// Sectioning
+
+// Elements
+//$overlay: rgba(0, 0, 0, 0.1);
+// Anchor Hover
+//$anchorHover: #3c8dbc;
+// Button Hover
+
+$btnHover: #27b7ea;
+// Select Hover
+//$hoverSelect: #f2fbfe;
+// Background
+//$backgroundColor: #f6f8fc;
+//$ghostWhite: #f7f8fc;
+//$headTripGradient1: #002e91;
+//$headTripGradient2: #087fdb;
+// Border
+
+//$borderBlue: #e6ebf3;
+//$borderGrey: #eaeaea;
+// shadow
+//$shadow: rgba(123, 147, 180, 0.2);
+// common padding for mobile
+$p16: 16px;
+$plr40: 40px;
+$commonpadding: 40px;
+// Form Styles
+
+//$textColor4: #1a2a42;
+//$dateColor: #91aac9;
+//$textColor5: #1c304b;
+//$textColor6: #19263a;
+//$darkBlue: #213e60;
+//$dark4: #1e3755;
+//$milkyWhite: #f0f0f0;
+
+// Colors
+$Blue: #00b9f5;
+$navyBlue: #002e6e;
+$DBlue: #3c5270;
+$PWhite: #f7f8fc;
+$Grey: #eaeaea;
+$LGrey: #eaeaea;
+$DGrey: #182233;
+$LGrey1: #d8d8d8;
+$line: #e6ebf3;
+
+$formInput: #86a0c2;
+$sidebarLabel: #536e92;
+$green: #00c673;
+$dark1: #29394f;
+$dark3: #7b93b4;
+$textColor2: #222;
+$sectionBG: #f6f8fc;
+$defaultbtnborder: #ebeff5;
+$hoverSelect: #f2fbfe;
+$textColor3: #182233;
+$warningBackground: #fefaf2;
+
+$greyDark: #29394f;
+$regular: 400;
+$bold: 600;
+$primary: #f1c911;
+$secondary: #373737;
+$lightSecondary: #888888;
+$error: #ff4b55;
+$white: #fff;
+$black: #000;
+
+
+$font0: 0.6rem;
+$font1: 1rem;
+$font2: 1.2rem;
+$font3: 1.4rem;
+$font4: 1.6rem;
+$font5: 2rem;
+$font6: 2.2rem;
+$font7: 2.4rem;
+$font8: 2.8rem;
+$font9: 3.2rem;
+$font10: 3.6rem;
+
+//font-weight
+$light: 300;
+$regular: 400;
+$semiRegularBold: 600;
+$semiBold: 700;
+$bold: 800;
+
+//colors
+$blue: #002e6e;
+$blueLight: #00b9f5;
+$blueExtraLight: #f3fbfe;
+$blueGrey: #536e92;
+$blueGreyLight: #86a0c2;
+$greyDark: #e6ebf3;
+$grey: #f0f4f6;
+$greyLight: #f7f8fc;
+$white: #fff;
+$black: #182233;
+$red: #ff4b55;
+$yellow: #ff9e00;
+$green: #00c673;
+$yellowLight: #fefaf2;
+
+// misc
+$radius: 0.2rem;
+
+// componentBaseSizes
+$smallSize: 3.2rem;
+$defaultSize: 4.8rem;
+$largeSize: 5.6rem;

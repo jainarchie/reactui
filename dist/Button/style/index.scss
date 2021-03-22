@@ -1,0 +1,119 @@
+@import '../../../variables.scss';
+
+.viz-button {
+  font-weight: 400;
+  font-size: 1.4rem;
+  padding: 6px 16px;
+  min-height: 40px;
+  border-radius: 2px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  outline: none;
+
+  .viz-loader {
+    padding: 0;
+  }
+
+  &__small {
+    font-size: 1.4rem;
+    padding: 6px 12px;
+    min-width: 105px;
+    min-height: 32px;
+  }
+
+  &__large {
+    font-size: 1.6rem;
+    padding: 18px 12px;
+    min-width: 147px;
+    min-height: 56px;
+  }
+
+  &-block {
+    width: 100%;
+  }
+
+  &__primary {
+    background-color: $primary;
+    color: $secondary;
+    border: 1px solid $primary;
+
+    &:hover,
+    &:focus {
+      background-color: $primary;
+      border-color: $primary;
+    }
+    &:disabled {
+      opacity: 0.9;
+    }
+  }
+
+  &__primary-outline {
+    background-color: $white;
+    color: $primary;
+    border: 1px solid $primary;
+    transition: all 0.3s ease;
+    &:hover,
+    &:focus {
+      border-color: $primary;
+      color: $primary;
+    }
+  }
+
+  &__secondary {
+    background-color: $secondary;
+    color: $primary;
+    border: 1px solid $secondary;
+    transition: all 0.3s ease;
+  }
+
+  &__danger {
+    background-color: $white;
+    color: $error;
+    border: 1px solid $error;
+    transition: all 0.3s ease;
+    &:hover,
+    &:focus {
+      background-color: $white;
+      border-color: $error;
+      color: $error;
+    }
+  }
+
+  &__link {
+    border-color: transparent;
+    color: $primary;
+    min-width: fit-content;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .viz-button__icon {
+    font-size: calc(2.4em / 1.4);
+
+    &--right,
+    &--left {
+      display: inline-flex;
+    }
+
+    &--right {
+      padding-left: 0.8rem;
+    }
+
+    &--left {
+      padding-right: 0.8rem;
+    }
+  }
+}
+
+button[disabled],
+button[disabled]:hover {
+  opacity: 0.6;
+  cursor: not-allowed;
+  color: rgba($dark3, 0.5);
+  border: 1px solid $sectionBG;
+}
